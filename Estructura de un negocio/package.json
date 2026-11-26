@@ -1,0 +1,23 @@
+{
+  "name": "glowtex-ecommerce-digital-twin",
+  "version": "1.0.0",
+  "description": "Plataforma de Comercio Electrónico y Gemelo Digital de Importación Textil GLOWTEX - Proyecto UPEC",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "digital-twin",
+    "comercio-exterior",
+    "ecuador",
+    "textil",
+    "senae"
+  ],
+  "author": "Wendy Gualavisi - UPEC",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

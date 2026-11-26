@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLOWTEX | Textiles, Tecnología y Soluciones · Tienda Virtual</title>
+  
+  <!-- Metadatos SEO Profesionales -->
+  <meta name="description" content="GLOWTEX Ecuador: Importación, distribución y comercialización de textiles deportivos, hoteleros, premium, insumos de confección y maquinaria industrial Jack y JUKI en Quito.">
+  <meta name="keywords" content="telas en Ecuador, distribuidora de telas en Quito, telas deportivas, telas para hoteles, maquinaria textil, hilos de coser, telas al por mayor, GLOWTEX">
+  <meta name="author" content="GLOWTEX S.A.S.">
+  
+  <!-- Tipografías de Lujo: Playfair Display (Serif Editorial) + Montserrat (Sans Moderno) + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Chart.js para el Gemelo Digital -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Hoja de Estilos Oficial GLOWTEX -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== BARRA SUPERIOR DE ANUNCIOS COMERCIALES ==================== -->
+  <div class="commercial-top-bar">
+    <div class="top-bar-promos">
+      <span><i class="fas fa-truck"></i> Envíos a todo el Ecuador</span>
+      <span><i class="fas fa-store"></i> Showroom Quito: Av. 10 de Agosto y El Inca</span>
+      <span><i class="fas fa-tags"></i> Precios Especiales por Rollo y Contenedor</span>
+    </div>
+    <div class="top-bar-contact">
+      <a href="https://wa.me/593994450914" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: +593 99 445 0914</a>
+      <a href="mailto:ventas@glowtex.ec"><i class="fas fa-envelope"></i> ventas@glowtex.ec</a>
+    </div>
+  </div>
+
+  <!-- ==================== CABECERA PRINCIPAL ==================== -->
+  <header class="main-header">
+    <div class="header-container">
+      
+      <!-- LOGOTIPO VECTORIAL GLOWTEX -->
+      <div class="glowtex-logo-link" onclick="switchView('inicio')">
+        <svg class="glowtex-emblem-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F3E7D3"/>
+              <stop offset="50%" stop-color="#C5A880"/>
+              <stop offset="100%" stop-color="#8F7249"/>
+            </linearGradient>
+            <linearGradient id="blackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2C2C2C"/>
+              <stop offset="100%" stop-color="#000000"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="46" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="6 3"/>
+          <path d="M50 16 C30 16 16 31 16 50 C16 69 30 84 50 84 C67 84 80 72 82 55 L52 55 L52 64 L71 64 C69 72 60 76 50 76 C35 76 26 65 26 50 C26 35 35 24 50 24 C59 24 67 29 72 35 L80 27 C73 20 62 16 50 16 Z" fill="url(#blackGrad)"/>
+          <path d="M25 45 L75 45 M32 35 L68 35 M32 55 L68 55 M50 25 L50 75" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="50" cy="50" r="4" fill="url(#goldGrad)"/>
+        </svg>
+
+        <div class="logo-text-stack">
+          <div class="logo-wordmark">
+            <span class="word-glow">GLOW</span><span class="word-tex">TEX</span>
+          </div>
+          <div class="logo-tagline">Textiles · Tecnología · Soluciones</div>
+        </div>
+      </div>
+
+      <!-- MENÚ DE NAVEGACIÓN COMPLETO (11 SECCIONES) -->
+      <nav class="nav-menu-bar">
+        <button class="nav-link-btn active" data-view="inicio">Inicio</button>
+        <button class="nav-link-btn" data-view="tienda">Tienda</button>
+        <button class="nav-link-btn" data-view="categorias">Categorías</button>
+        <button class="nav-link-btn" data-view="marcas">Marcas</button>
+        <button class="nav-link-btn" data-view="promociones">Promociones</button>
+        <button class="nav-link-btn" data-view="nosotros">Nosotros</button>
+        <button class="nav-link-btn" data-view="branding">Branding & Management</button>
+        <button class="nav-link-btn" data-view="soluciones">Soluciones B2B</button>
+        <button class="nav-link-btn" data-view="gemelo-digital">Gemelo Digital</button>
+        <button class="nav-link-btn" data-view="blog">Blog</button>
+        <button class="nav-link-btn" data-view="contacto">Contacto</button>
+      </nav>
+
+      <!-- ACCIONES: B2B/B2C SWITCH, FAVORITOS, USUARIO Y CARRITO -->
+      <div class="header-actions-group">
+        <div class="mode-toggle-switch">
+          <button id="btn-mode-b2b" class="mode-pill-btn active" title="Precios por rollo y volumen">Mayorista B2B</button>
+          <button id="btn-mode-b2c" class="mode-pill-btn" title="Precios por metro al detalle">Detalle B2C</button>
+        </div>
+
+        <button id="user-account-btn" class="header-icon-btn" title="Mi Cuenta / Acceso Clientes">
+          <i class="far fa-user"></i>
+        </button>
+
+        <button id="wishlist-toggle-btn" class="header-icon-btn" title="Lista de Favoritos">
+          <i class="far fa-heart"></i>
+          <span id="wishlist-badge-count" class="icon-badge">0</span>
+        </button>
+
+        <button id="cart-toggle-btn" class="header-icon-btn" title="Bolsa de Compras">
+          <i class="fas fa-shopping-bag"></i>
+          <span id="cart-badge-count" class="icon-badge">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== HERO BANNER EDITORIAL (ESTILO VICTORIA'S SECRET & FINATEXTIL) ==================== -->
+  <section id="hero-luxury-banner" class="hero-editorial-wrapper">
+    <img src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?auto=format&fit=crop&w=1600&q=85" alt="Telas de Alta Calidad GLOWTEX" class="hero-editorial-bg-img">
+    <div class="hero-editorial-gradient"></div>
+
+    <div class="hero-editorial-container">
+      <div class="hero-editorial-content">
+        <span class="hero-luxury-tag">Importación Directa & Ecosistema Textil</span>
+        <h1 class="hero-editorial-title">
+          Todo lo que necesitas para <em>crear, confeccionar</em> y transformar
+        </h1>
+        <p class="hero-editorial-lead">
+          Conectamos a fabricantes textiles internacionales con diseñadores, talleres de confección y cadenas hoteleras en Ecuador. Calidad seleccionada, asesoría técnica y simulación aduanera en un solo lugar.
+        </p>
+        
+        <div class="hero-buttons-row">
+          <button class="btn-luxury-primary" onclick="switchView('tienda')">
+            Explorar Catálogo <i class="fas fa-arrow-right"></i>
+          </button>
+          <button class="btn-luxury-outline" onclick="switchView('nosotros')">
+            Conoce GLOWTEX
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 1. VISTA INICIO ==================== -->
+  <main id="view-inicio" class="view-section">
+    <!-- Beneficios Comerciales -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 50px;">
+      <div style="background: #FFFFFF; padding: 22px 16px; border: 1px solid var(--color-border); text-align: center; border-radius: var(--radius-sm);">
+        <i class="fas fa-certificate" style="font-size: 1.8rem; color: var(--color-gold); margin-bottom: 8px;"></i>
+        <h5 style="font-size: 0.85rem; color: #111111; font-weight: 700; text-transform: uppercase;">Calidad Seleccionada</h5>
+        <p style="font-size: 0.8rem; color: #6B7280; margin-top: 4px;">Telas con fichas técnicas y ensayos garantizados.</p>
+      </div>
+      <div style="background: #FFFFFF; padding: 22px 16px; border: 1px solid var(--color-border); text-align: center; border-radius: var(--radius-sm);">
+        <i class="fas fa-globe-americas" style="font-size: 1.8rem; color: var(--color-gold); margin-bottom: 8px;"></i>
+        <h5 style="font-size: 0.85rem; color: #111111; font-weight: 700; text-transform: uppercase;">Abastecimiento Global</h5>
+        <p style="font-size: 0.8rem; color: #6B7280; margin-top: 4px;">Importación de China, Colombia, Perú e India.</p>
+      </div>
+      <div style="background: #FFFFFF; padding: 22px 16px; border: 1px solid var(--color-border); text-align: center; border-radius: var(--radius-sm);">
+        <i class="fas fa-user-check" style="font-size: 1.8rem; color: var(--color-gold); margin-bottom: 8px;"></i>
+        <h5 style="font-size: 0.85rem; color: #111111; font-weight: 700; text-transform: uppercase;">Asesoría Especializada</h5>
+        <p style="font-size: 0.8rem; color: #6B7280; margin-top: 4px;">Orientación técnica en gramaje, aguja y rendimiento.</p>
+      </div>
+      <div style="background: #FFFFFF; padding: 22px 16px; border: 1px solid var(--color-border); text-align: center; border-radius: var(--radius-sm);">
+        <i class="fas fa-dolly-flatbed" style="font-size: 1.8rem; color: var(--color-gold); margin-bottom: 8px;"></i>
+        <h5 style="font-size: 0.85rem; color: #111111; font-weight: 700; text-transform: uppercase;">Ventas al Por Mayor</h5>
+        <p style="font-size: 0.8rem; color: #6B7280; margin-top: 4px;">Rollos cerrados y contenedores con despacho directo.</p>
+      </div>
+    </div>
+
+    <!-- Categorías Destacadas -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+      <div>
+        <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
+          Líneas de Negocio
+        </span>
+        <h2 style="font-size: 2.2rem; color: #111111; margin-top: 4px;">Explora Nuestras 6 Colecciones</h2>
+      </div>
+      <button class="btn-spec" onclick="switchView('categorias')">Ver Todas <i class="fas fa-arrow-right"></i></button>
+    </div>
+
+    <div id="home-categories-grid" class="categories-showcase-grid"></div>
+
+    <!-- Productos Destacados -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin: 50px 0 24px;">
+      <div>
+        <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
+          Selección Destacada
+        </span>
+        <h2 style="font-size: 2.2rem; color: #111111; margin-top: 4px;">Referencias de Mayor Demanda</h2>
+      </div>
+      <button class="btn-spec" onclick="switchView('tienda')">Ver Catálogo Completo (150 SKUs) <i class="fas fa-arrow-right"></i></button>
+    </div>
+
+    <div id="home-featured-products-grid" class="products-grid"></div>
+
+    <!-- Llamado a la Acción Comercial -->
+    <div style="background: #111111; color: #FFFFFF; padding: 45px 36px; border-radius: var(--radius-sm); margin: 60px 0 20px; border-left: 4px solid var(--color-gold); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+      <div>
+        <h3 style="font-size: 2rem; font-family: var(--font-serif); margin-bottom: 6px;">¿Buscas soluciones para tu negocio?</h3>
+        <p style="color: #9CA3AF; font-size: 1rem; max-width: 650px;">
+          Atendemos fábricas de confección, marcas deportivas, hoteles y diseñadores con precios escalonados B2B y compras programadas. Conversemos hoy mismo.
+        </p>
+      </div>
+      <div style="display: flex; gap: 14px;">
+        <button class="btn-luxury-primary" onclick="switchView('soluciones')">
+          Cotizar como Empresa
+        </button>
+        <a href="https://wa.me/593994450914?text=Hola%20GLOWTEX,%20deseo%20asesoria%20comercial%20para%20mi%20negocio" target="_blank" class="btn-luxury-outline" style="text-decoration: none;">
+          <i class="fab fa-whatsapp"></i> Chat WhatsApp
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== 2. VISTA TIENDA (CATÁLOGO) ==================== -->
+  <section id="view-tienda" class="view-section hidden-view">
+    <div class="catalog-controls">
+      <div class="filter-search-row">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="catalog-search-input" placeholder="Buscar por nombre, código SKU (ej. DEP-001), fibra, norma INEN...">
+        </div>
+        <div style="font-family: var(--font-sans); font-size: 0.78rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase;">
+          <span id="mode-active-label">Modalidad B2B Mayorista (Precios de Rollo / Paquete)</span>
+        </div>
+      </div>
+
+      <div id="divisions-pills-container" class="divisions-pills"></div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+      <span id="results-counter" style="font-size: 0.85rem; color: #6B7280; font-weight: 600;"></span>
+      <span style="font-size: 0.78rem; color: #9CA3AF; font-family: var(--font-sans); text-transform: uppercase;">Precios en USD · 15% IVA desglosado en checkout</span>
+    </div>
+
+    <div id="products-catalog-grid" class="products-grid"></div>
+  </section>
+
+  <!-- ==================== 3. VISTA CATEGORÍAS ==================== -->
+  <section id="view-categorias" class="view-section hidden-view">
+    <div style="margin-bottom: 30px;">
+      <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Portafolio Integral</span>
+      <h2 style="font-size: 2.2rem; color: #111111; margin-top: 4px;">6 Divisiones Comerciales Especializadas</h2>
+      <p style="color: #6B7280; font-size: 0.95rem; margin-top: 6px;">
+        Accede a nuestro catálogo completo estructurado según las necesidades de cada sector de la industria textil.
+      </p>
+    </div>
+
+    <div class="categories-showcase-grid">
+      <div class="category-luxury-card" onclick="filterByDivisionAndOpenStore('sport')">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="GLOWTEX Sport" class="category-card-bg-img" loading="lazy">
+        <div class="category-luxury-overlay"></div>
+        <div class="category-luxury-info">
+          <div class="category-tag-sub">DIVISIÓN 1 · 30 SKUs</div>
+          <h3 class="category-luxury-title">GLOWTEX Sport</h3>
+          <p class="category-luxury-desc">Lycras compresión, nylon spandex, Supplex, dry fit microperforado y mallas sublimables.</p>
+          <span class="category-luxury-action">Ver Telas Deportivas <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="category-luxury-card" onclick="filterByDivisionAndOpenStore('hospitality')">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="GLOWTEX Hospitality" class="category-card-bg-img" loading="lazy">
+        <div class="category-luxury-overlay"></div>
+        <div class="category-luxury-info">
+          <div class="category-tag-sub">DIVISIÓN 2 · 25 SKUs</div>
+          <h3 class="category-luxury-title">GLOWTEX Hospitality</h3>
+          <p class="category-luxury-desc">Percal de algodón 180 a 300 hilos, satén hotelero a rayas, toalleros 550g y cortinas blackout.</p>
+          <span class="category-luxury-action">Ver Textiles Hoteleros <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="category-luxury-card" onclick="filterByDivisionAndOpenStore('premium')">
+        <img src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?auto=format&fit=crop&w=800&q=80" alt="GLOWTEX Premium" class="category-card-bg-img" loading="lazy">
+        <div class="category-luxury-overlay"></div>
+        <div class="category-luxury-info">
+          <div class="category-tag-sub">DIVISIÓN 3 · 20 SKUs</div>
+          <h3 class="category-luxury-title">GLOWTEX Premium</h3>
+          <p class="category-luxury-desc">Algodón Pima peruano 50/1 (CAN), Tangüis, lino francés puro y seda Mulberry 16-19 momme.</p>
+          <span class="category-luxury-action">Ver Telas Exclusivas <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="category-luxury-card" onclick="filterByDivisionAndOpenStore('supplies')">
+        <img src="https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=800&q=80" alt="GLOWTEX Supplies" class="category-card-bg-img" loading="lazy">
+        <div class="category-luxury-overlay"></div>
+        <div class="category-luxury-info">
+          <div class="category-tag-sub">DIVISIÓN 4 · 35 SKUs</div>
+          <h3 class="category-luxury-title">GLOWTEX Supplies</h3>
+          <p class="category-luxury-desc">Cierres SBS impermeables, hilos Coats 40/2, elásticos reforzados y agujas Groz-Beckert.</p>
+          <span class="category-luxury-action">Ver Insumos y Mercería <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="category-luxury-card" onclick="filterByDivisionAndOpenStore('machinery')">
+        <img src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=800&q=80" alt="GLOWTEX Machinery" class="category-card-bg-img" loading="lazy">
+        <div class="category-luxury-overlay"></div>
+        <div class="category-luxury-info">
+          <div class="category-tag-sub">DIVISIÓN 5 · 20 SKUs</div>
+          <h3 class="category-luxury-title">GLOWTEX Machinery</h3>
+          <p class="category-luxury-desc">Máquinas rectas industriales Jack F5 / A4B mecatrónicas con voz, overlocks 4 hilos y cortadoras.</p>
+          <span class="category-luxury-action">Ver Maquinaria Industrial <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="category-luxury-card" onclick="filterByDivisionAndOpenStore('tools')">
+        <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80" alt="GLOWTEX Tools" class="category-card-bg-img" loading="lazy">
+        <div class="category-luxury-overlay"></div>
+        <div class="category-luxury-info">
+          <div class="category-tag-sub">DIVISIÓN 6 · 20 SKUs</div>
+          <h3 class="category-luxury-title">GLOWTEX Tools</h3>
+          <p class="category-luxury-desc">Tijeras profesionales de sastre 10", curvas francesas acrílicas graduadas y bases de corte A1.</p>
+          <span class="category-luxury-action">Ver Herramientas de Taller <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. VISTA MARCAS Y PROVEEDORES ==================== -->
+  <section id="view-marcas" class="view-section hidden-view">
+    <div style="margin-bottom: 30px;">
+      <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Abastecimiento Homologado</span>
+      <h2 style="font-size: 2.2rem; color: #111111; margin-top: 4px;">Marcas Oficiales y Proveedores Internacionales</h2>
+      <p style="color: #6B7280; font-size: 0.95rem; margin-top: 6px;">
+        Relaciones comerciales y acuerdos de distribución verificados con fabricantes de Colombia, Perú, China, Taiwán e India.
+      </p>
+    </div>
+
+    <div id="suppliers-grid-container" class="suppliers-grid"></div>
+  </section>
+
+  <!-- ==================== 5. VISTA PROMOCIONES ==================== -->
+  <section id="view-promociones" class="view-section hidden-view">
+    <div style="margin-bottom: 30px;">
+      <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Oportunidades Comerciales</span>
+      <h2 style="font-size: 2.2rem; color: #111111; margin-top: 4px;">Promociones, Paquetes para Talleres y Descuentos</h2>
+      <p style="color: #6B7280; font-size: 0.95rem; margin-top: 6px;">
+        Combos especiales de equipamiento industrial con insumos y tarifas preferenciales por volumen.
+      </p>
+    </div>
+
+    <div id="promotions-grid-container" class="promotions-grid"></div>
+  </section>
+
+  <!-- ==================== 6. VISTA NOSOTROS ==================== -->
+  <section id="view-nosotros" class="view-section hidden-view">
+    <div style="background: #FFFFFF; padding: 45px 36px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); margin-bottom: 35px;">
+      <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Quiénes Somos</span>
+      <h2 style="font-size: 2.4rem; color: #111111; margin: 8px 0 16px;">
+        Transformando el Ecosistema Textil del Ecuador
+      </h2>
+      <p style="font-size: 1.05rem; color: #4B5563; line-height: 1.8; margin-bottom: 18px;">
+        GLOWTEX nace como una propuesta empresarial orientada a transformar y fortalecer el acceso a soluciones textiles en el mercado ecuatoriano, mediante la importación, comercialización y distribución de telas, insumos, accesorios, herramientas y maquinaria para los sectores de confección, moda, industria, hotelería y decoración.
+      </p>
+      <p style="font-size: 1rem; color: #4B5563; line-height: 1.8; margin-bottom: 18px;">
+        La empresa busca conectar la industria nacional con proveedores y fabricantes internacionales, facilitando el acceso a productos de calidad, innovación y tecnología. Nuestra propuesta empresarial se fundamenta en brindar soluciones integrales en un solo lugar, combinando variedad de productos, asesoría técnica y comercial, precios competitivos y atención personalizada.
+      </p>
+      <p style="font-size: 1rem; color: #4B5563; line-height: 1.8;">
+        GLOWTEX aspira a convertirse en un aliado estratégico para el desarrollo de la industria textil ecuatoriana, con proyección hacia mercados internacionales.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 35px;">
+      <div style="background: #111111; color: #FFFFFF; padding: 36px; border-radius: var(--radius-sm); border-left: 4px solid var(--color-gold);">
+        <h3 style="font-size: 1.5rem; color: var(--color-gold); margin-bottom: 12px; font-family: var(--font-serif);">
+          Misión Institucional
+        </h3>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: #D1D5DB;">
+          Proveer al mercado ecuatoriano e internacional soluciones integrales para la industria textil y de confección, mediante la importación, comercialización y distribución de telas, insumos, accesorios, herramientas y maquinaria de calidad, estableciendo relaciones estratégicas con proveedores confiables y ofreciendo a nuestros clientes asesoría especializada, innovación, servicio y precios competitivos que contribuyan al crecimiento de sus negocios.
+        </p>
+      </div>
+
+      <div style="background: #111111; color: #FFFFFF; padding: 36px; border-radius: var(--radius-sm); border-left: 4px solid var(--color-gold);">
+        <h3 style="font-size: 1.5rem; color: var(--color-gold); margin-bottom: 12px; font-family: var(--font-serif);">
+          Visión 2030
+        </h3>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: #D1D5DB;">
+          Consolidarnos para el año 2030 como una empresa referente en Ecuador en importación y distribución de soluciones textiles, reconocida por la calidad de su portafolio, innovación comercial, excelencia en servicio y capacidad de conectar a la industria nacional con proveedores y mercados internacionales, proyectándonos progresivamente hacia operaciones de exportación y expansión regional.
+        </p>
+      </div>
+    </div>
+
+    <!-- 5 Valores Corporativos -->
+    <div style="background: #FFFFFF; padding: 36px; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+      <h3 style="font-size: 1.5rem; color: #111111; margin-bottom: 22px;">Nuestros 5 Valores Corporativos</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+        <div style="background: var(--color-bg-stone); padding: 18px; border-radius: 4px; border-left: 3px solid var(--color-black);">
+          <strong style="color: #111111; display: block; margin-bottom: 6px; font-size: 0.95rem;">1. Integridad</strong>
+          <span style="font-size: 0.85rem; color: #4B5563; line-height: 1.5;">Transparencia total en precios, partidas arancelarias, cubicaje de carga y fichas técnicas certificadas.</span>
+        </div>
+        <div style="background: var(--color-bg-stone); padding: 18px; border-radius: 4px; border-left: 3px solid var(--color-black);">
+          <strong style="color: #111111; display: block; margin-bottom: 6px; font-size: 0.95rem;">2. Calidad</strong>
+          <span style="font-size: 0.85rem; color: #4B5563; line-height: 1.5;">Ensayos rigurosos de laboratorio y textiles de alto rendimiento libres de fallas o mermas ocultas.</span>
+        </div>
+        <div style="background: var(--color-bg-stone); padding: 18px; border-radius: 4px; border-left: 3px solid var(--color-black);">
+          <strong style="color: #111111; display: block; margin-bottom: 6px; font-size: 0.95rem;">3. Innovación</strong>
+          <span style="font-size: 0.85rem; color: #4B5563; line-height: 1.5;">Incorporación de fibras técnicas de vanguardia, maquinaria inteligente de confección y gemelos digitales.</span>
+        </div>
+        <div style="background: var(--color-bg-stone); padding: 18px; border-radius: 4px; border-left: 3px solid var(--color-black);">
+          <strong style="color: #111111; display: block; margin-bottom: 6px; font-size: 0.95rem;">4. Compromiso con el Cliente</strong>
+          <span style="font-size: 0.85rem; color: #4B5563; line-height: 1.5;">Asesoría especializada y acompañamiento permanente para potenciar el crecimiento de talleres y diseñadores.</span>
+        </div>
+        <div style="background: var(--color-bg-stone); padding: 18px; border-radius: 4px; border-left: 3px solid var(--color-black);">
+          <strong style="color: #111111; display: block; margin-bottom: 6px; font-size: 0.95rem;">5. Excelencia Operativa</strong>
+          <span style="font-size: 0.85rem; color: #4B5563; line-height: 1.5;">Puntualidad rigurosa en despachos a nivel nacional, abastecimiento continuo y soporte postventa garantizado.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 7. VISTA BRANDING Y MANAGEMENT ==================== -->
+  <section id="view-branding" class="view-section hidden-view">
+    <div style="margin-bottom: 30px;">
+      <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Gobierno y Dirección</span>
+      <h2 style="font-size: 2.2rem; color: #111111; margin-top: 4px;">Identidad, Estrategia y Gestión Empresarial GLOWTEX</h2>
+      <p style="color: #6B7280; font-size: 0.95rem; margin-top: 6px;">
+        Integración visible del diseño de marca y el gobierno corporativo de la compañía.
+      </p>
+    </div>
+
+    <!-- Bloque A: Branding -->
+    <div style="background: #FFFFFF; padding: 36px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); margin-bottom: 30px;">
+      <h3 style="font-size: 1.6rem; color: #111111; margin-bottom: 20px; border-bottom: 2px solid var(--color-gold); padding-bottom: 8px;">
+        Bloque A: Branding e Identidad Visual
+      </h3>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 24px;">
+        <div style="background: var(--color-bg-stone); padding: 22px; border-radius: 4px;">
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 12px;">Paleta Cromática</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem;">
+            <div><strong>Obsidian Black (#111111):</strong> Elegancia, contraste y autoridad.</div>
+            <div><strong>Champagne Gold (#C5A880):</strong> Distinción, calidad y valor artesanal.</div>
+            <div><strong>Pure White (#FFFFFF):</strong> Limpieza visual y modernidad.</div>
+            <div><strong>Soft Stone (#F7F7F5):</strong> Textura neutra de soporte.</div>
+          </div>
+        </div>
+
+        <div style="background: var(--color-bg-stone); padding: 22px; border-radius: 4px;">
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 12px;">Tipografías Oficiales</h4>
+          <p style="font-size: 0.85rem; line-height: 1.8; color: #4B5563;">
+            • <strong>Titulares:</strong> Playfair Display (Serif editorial luxury).<br>
+            • <strong>Menú y Botones:</strong> Montserrat (Sans geométrico con tracking alto).<br>
+            • <strong>Cuerpo y Fichas:</strong> Inter / Open Sans (Lectura clara de especificaciones).
+          </p>
+        </div>
+
+        <div style="background: var(--color-bg-stone); padding: 22px; border-radius: 4px;">
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 12px;">Propuesta de Valor</h4>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: #4B5563;">
+            GLOWTEX ofrece una solución integral de abastecimiento textil mediante la importación y distribución de telas, insumos y maquinaria de fabricantes seleccionados, brindando variedad, calidad, asesoría técnica y precios competitivos en un solo lugar.
+          </p>
+        </div>
+      </div>
+
+      <!-- Manifiesto -->
+      <div style="background: #111111; color: #FFFFFF; padding: 28px; border-radius: 4px; text-align: center; border: 1px solid var(--color-gold);">
+        <i class="fas fa-quote-left" style="font-size: 1.6rem; color: var(--color-gold); margin-bottom: 10px;"></i>
+        <h4 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-gold); margin-bottom: 10px;">Manifiesto Corporativo GLOWTEX</h4>
+        <p style="font-size: 1.05rem; font-style: italic; max-width: 820px; margin: 0 auto; line-height: 1.7; color: #E5E7EB;">
+          "Creemos en el poder de crear. Detrás de cada tela existe una idea, detrás de cada confección existe un propósito y detrás de cada negocio existe una oportunidad. Conectamos al mundo de los textiles con las personas y empresas que transforman materiales en productos, sueños y negocios."
+        </p>
+      </div>
+    </div>
+
+    <!-- Bloque B: Management -->
+    <div style="background: #FFFFFF; padding: 36px; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+      <h3 style="font-size: 1.6rem; color: #111111; margin-bottom: 20px; border-bottom: 2px solid var(--color-gold); padding-bottom: 8px;">
+        Bloque B: Management y Dirección Estratégica
+      </h3>
+
+      <div style="background: var(--color-bg-stone); padding: 24px; border-radius: 4px; margin-bottom: 24px; text-align: center;">
+        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 16px;">Estructura Organizacional</h4>
+        <div style="display: inline-block; background: #111111; color: #FFFFFF; padding: 8px 24px; border-radius: 20px; font-weight: 700; font-family: var(--font-sans); font-size: 0.85rem;">
+          Junta de Socios / Accionistas
+        </div>
+        <br><div style="display: inline-block; width: 2px; height: 16px; background: #D1D5DB;"></div><br>
+        <div style="display: inline-block; background: var(--color-gold); color: #000000; padding: 8px 20px; border-radius: 20px; font-weight: 800; font-family: var(--font-sans); font-size: 0.85rem;">
+          Gerencia General (Dirección Estratégica)
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 16px;">
+          <div style="background: #FFFFFF; padding: 14px; border: 1px solid var(--color-border); font-size: 0.82rem;">
+            <strong>Comercial y Marketing</strong><br>Ventas B2B/B2C, E-Commerce, Showroom
+          </div>
+          <div style="background: #FFFFFF; padding: 14px; border: 1px solid var(--color-border); font-size: 0.82rem;">
+            <strong>Importaciones y Compras</strong><br>SENAE, ECUAPASS, Forwarders, TLCs
+          </div>
+          <div style="background: #FFFFFF; padding: 14px; border: 1px solid var(--color-border); font-size: 0.82rem;">
+            <strong>Administración y Finanzas</strong><br>Facturación SRI, Tesorería, Costos
+          </div>
+          <div style="background: #FFFFFF; padding: 14px; border: 1px solid var(--color-border); font-size: 0.82rem;">
+            <strong>Operaciones e Inventario</strong><br>Bodega Quito, FIFO, Control de Mermas
+          </div>
+        </div>
+      </div>
+
+      <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 14px;">5 Políticas Empresariales</h4>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+        <div style="background: var(--color-bg-stone); padding: 16px; border-left: 3px solid var(--color-gold); font-size: 0.85rem; line-height: 1.5;">
+          <strong style="color: #111111; display: block; margin-bottom: 4px;">1. Calidad y Especificaciones Técnicas</strong>
+          <span>Ensayos de solidez de color, tolerancia dimensional, resistencia a la tracción y entrega obligatoria de ficha técnica certificada en cada lote importado.</span>
+        </div>
+        <div style="background: var(--color-bg-stone); padding: 16px; border-left: 3px solid var(--color-gold); font-size: 0.85rem; line-height: 1.5;">
+          <strong style="color: #111111; display: block; margin-bottom: 4px;">2. Compras y Abastecimiento Legal</strong>
+          <span>Homologación de fábricas internacionales de primer nivel, estricto cumplimiento COMEX 401 y aranceles SENAE, con cero tolerancia al contrabando.</span>
+        </div>
+        <div style="background: var(--color-bg-stone); padding: 16px; border-left: 3px solid var(--color-gold); font-size: 0.85rem; line-height: 1.5;">
+          <strong style="color: #111111; display: block; margin-bottom: 4px;">3. Precios y Transparencia Comercial</strong>
+          <span>Estructura de precios transparente para minoristas (B2C) y mayoristas (B2B), calculados sobre el factor real de nacionalización sin sobreprecios ocultos.</span>
+        </div>
+        <div style="background: var(--color-bg-stone); padding: 16px; border-left: 3px solid var(--color-gold); font-size: 0.85rem; line-height: 1.5;">
+          <strong style="color: #111111; display: block; margin-bottom: 4px;">4. Servicio al Cliente y Garantía</strong>
+          <span>Respuesta ágil a cotizaciones en menos de 2 horas hábiles, asistencia técnica in situ para maquinaria y reposición inmediata ante defectos comprobados de fábrica.</span>
+        </div>
+        <div style="background: var(--color-bg-stone); padding: 16px; border-left: 3px solid var(--color-gold); font-size: 0.85rem; line-height: 1.5;">
+          <strong style="color: #111111; display: block; margin-bottom: 4px;">5. Inventario, Logística y Sostenibilidad</strong>
+          <span>Rotación rigurosa FIFO, almacenamiento climatizado en bodega Quito, distribución nacional asegurada y prioridad a fibras con sellos ecológicos OEKO-TEX y GRS.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. VISTA SOLUCIONES EMPRESARIALES (B2B) ==================== -->
+  <section id="view-soluciones" class="view-section hidden-view">
+    <div class="enterprise-hero-card">
+      <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
+        Canal B2B & Mayorista
+      </span>
+      <h2 style="font-size: 2.3rem; font-family: var(--font-serif); margin: 10px 0 8px;">
+        Soluciones Corporativas y Abastecimiento a Escala
+      </h2>
+      <p style="color: #D1D5DB; font-size: 1.05rem; max-width: 800px;">
+        Suministramos materias primas, avíos y maquinaria a los polos textiles de Quito, Guayaquil, Atuntaqui, Pelileo y Ambato con condiciones comerciales a medida.
+      </p>
+
+      <div class="enterprise-segments-grid">
+        <div class="segment-item">
+          <i class="fas fa-industry"></i>
+          <h5>Fábricas de Confección</h5>
+          <p style="font-size: 0.75rem; color: #9CA3AF; margin-top: 4px;">Rollos cerrados y contenedores programados.</p>
+        </div>
+        <div class="segment-item">
+          <i class="fas fa-running"></i>
+          <h5>Marcas Deportivas</h5>
+          <p style="font-size: 0.75rem; color: #9CA3AF; margin-top: 4px;">Lycras sublimables y tejidos Dry-Fit UV50+.</p>
+        </div>
+        <div class="segment-item">
+          <i class="fas fa-hotel"></i>
+          <h5>Cadenas Hoteleras</h5>
+          <p style="font-size: 0.75rem; color: #9CA3AF; margin-top: 4px;">Sábanas gran ancho 2.8m y toallas de alto gramaje.</p>
+        </div>
+        <div class="segment-item">
+          <i class="fas fa-cut"></i>
+          <h5>Talleres y Diseñadores</h5>
+          <p style="font-size: 0.75rem; color: #9CA3AF; margin-top: 4px;">Asesoría en corte, patronaje y máquinas Jack.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario B2B -->
+    <div style="background: #FFFFFF; padding: 36px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); max-width: 850px; margin: 0 auto;">
+      <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #111111; margin-bottom: 6px;">
+        Solicitud de Cotización Mayorista B2B
+      </h3>
+      <p style="font-size: 0.88rem; color: #6B7280; margin-bottom: 24px;">
+        Completa los datos de tu empresa para recibir una cotización formal con precios FOB/CIF, factor de nacionalización y condiciones de crédito.
+      </p>
+
+      <form id="enterprise-rfq-form">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div class="form-group">
+            <label>Empresa o Razón Social:</label>
+            <input type="text" id="ent-company-name" placeholder="Ej. Confecciones Andinas S.A.S." required>
+          </div>
+          <div class="form-group">
+            <label>Persona de Contacto / Cargo:</label>
+            <input type="text" id="ent-contact-name" placeholder="Ej. Carlos Mendoza - Jefe Compras" required>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div class="form-group">
+            <label>Correo Electrónico:</label>
+            <input type="email" id="ent-email" placeholder="compras@tuempresa.com" required>
+          </div>
+          <div class="form-group">
+            <label>Teléfono / WhatsApp:</label>
+            <input type="text" id="ent-phone" placeholder="09XXXXXXXX" required>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div class="form-group">
+            <label>Sector de Negocio:</label>
+            <select id="ent-sector-select">
+              <option value="Confección Deportiva">Confección Deportiva y Ropa de Baño</option>
+              <option value="Hotelería y Restaurantes">Hotelería, Clínicas y Restaurantes</option>
+              <option value="Moda y Alta Costura">Moda y Marcas de Diseñador</option>
+              <option value="Taller de Confección">Taller de Confección Independiente</option>
+              <option value="Distribuidor Textil">Distribuidor Mayorista Local</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Volumen Mensual Estimado:</label>
+            <input type="text" id="ent-volume-input" placeholder="Ej. 1.000 metros / 4 máquinas" required>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 22px;">
+          <label>Detalle de Productos Requeridos:</label>
+          <textarea id="ent-details-text" rows="3" style="width: 100%; padding: 10px; border: 1px solid var(--color-border); border-radius: 4px; font-family: inherit;" placeholder="Especifica qué productos del catálogo GLOWTEX necesitas cotizar..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-luxury-primary" style="width: 100%; justify-content: center; background: #111111; color: #FFFFFF;">
+          Enviar Solicitud a la Gerencia Comercial
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== 9. VISTA GEMELO DIGITAL & SENAE ==================== -->
+  <section id="view-gemelo-digital" class="view-section hidden-view">
+    <div class="twin-header-card">
+      <div class="twin-title-group">
+        <h2>Gemelo Digital <span>GLOWTEX</span></h2>
+        <p style="color: #D1D5DB; font-size: 0.9rem; margin-top: 4px;">Modelo computacional en tiempo real de la cadena de suministro, liquidación aduanera SENAE y proyecciones financieras.</p>
+      </div>
+      <div style="background: rgba(197,168,128,0.15); border: 1px solid var(--color-gold); padding: 8px 16px; border-radius: 4px; font-size: 0.78rem; color: #FFFFFF; font-family: var(--font-sans); text-transform: uppercase;">
+        <i class="fas fa-sync fa-spin"></i> Parámetros Arancelarios: En Línea
+      </div>
+    </div>
+
+    <div class="twin-subnav">
+      <button class="twin-subnav-btn active" data-subpanel="senae">
+        <i class="fas fa-calculator"></i> 1. Simulador de Tributos SENAE / ECUAPASS
+      </button>
+      <button class="twin-subnav-btn" data-subpanel="supply-chain">
+        <i class="fas fa-boxes"></i> 2. Cadena de Suministro & ROP
+      </button>
+      <button class="twin-subnav-btn" data-subpanel="financial">
+        <i class="fas fa-chart-line"></i> 3. Escenarios Financieros (12 Meses)
+      </button>
+    </div>
+
+    <!-- Subpanel 1: SENAE -->
+    <div id="subpanel-senae" class="twin-subpanel">
+      <div class="twin-panel-card">
+        <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: #111111;">
+          Simulador de Costeo y Liquidación de Tributos de Importación (Ecuador)
+        </h3>
+        <p style="color: #6B7280; font-size: 0.88rem; margin-bottom: 20px;">
+          Calcula con precisión legal el valor en aduana (CIF), tributos (Ad Valorem, FODINFA 0.5%, IVA 15%) y el costo unitario nacionalizado.
+        </p>
+
+        <div class="senae-form-grid">
+          <div class="form-group">
+            <label>Valor FOB Total ($ USD):</label>
+            <input type="number" id="senae-fob-input" value="36000" step="500">
+          </div>
+          <div class="form-group">
+            <label>Flete Internacional ($ USD):</label>
+            <input type="number" id="senae-freight-input" value="5000" step="100">
+          </div>
+          <div class="form-group">
+            <label>Seguro Internacional ($ USD):</label>
+            <input type="number" id="senae-insurance-input" value="400" step="50">
+          </div>
+          <div class="form-group">
+            <label>Origen de la Carga:</label>
+            <select id="senae-origin-select">
+              <option value="China">China (TLC Ecuador-China)</option>
+              <option value="CAN">Colombia / Perú (Comunidad Andina - 0% Arancel)</option>
+              <option value="India">India / Asia General</option>
+              <option value="Other">Resto del Mundo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Arancel Ad Valorem Base (%):</label>
+            <input type="number" id="senae-advalorem-rate" value="10" step="1">
+          </div>
+          <div class="form-group">
+            <label>Unidades / Metros Totales:</label>
+            <input type="number" id="senae-units-input" value="5000" step="100">
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+          <label style="font-size: 0.82rem; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+            <input type="checkbox" id="senae-capital-good-check">
+            <span>¿Es Bien de Capital / Maquinaria Textil? (Arancel 0% Ley COPCI)</span>
+          </label>
+          <button id="btn-calc-senae" class="btn-calculate">
+            <i class="fas fa-play"></i> Ejecutar Simulación Aduanera
+          </button>
+        </div>
+
+        <div id="senae-calculation-output" class="senae-results-grid"></div>
+      </div>
+    </div>
+
+    <!-- Subpanel 2: Cadena de Suministro -->
+    <div id="subpanel-supply-chain" class="twin-subpanel hidden-view">
+      <div class="twin-panel-card">
+        <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: #111111;">
+          Gemelo Digital de Cadena de Suministro y Punto de Reorden (ROP)
+        </h3>
+        <p style="color: #6B7280; font-size: 0.88rem; margin-bottom: 20px;">
+          Modelación del ciclo logístico internacional: tiempos marítimos hacia puerto Posorja/Guayaquil y tránsito terrestre andino a Quito.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <div style="background: var(--color-bg-stone); padding: 20px; border-radius: 4px; border: 1px solid var(--color-border);">
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: #111111; margin-bottom: 10px;">
+              <i class="fas fa-ship" style="color: var(--color-gold);"></i> Ruta China (Ningbo / Shanghai)
+            </h4>
+            <ul style="font-size: 0.82rem; line-height: 1.8; color: #4B5563; list-style: none;">
+              <li>• Fabricación y consolidación: <strong>10 - 15 días</strong></li>
+              <li>• Tránsito marítimo al Pacífico: <strong>28 - 32 días</strong></li>
+              <li>• Desaduanamiento SENAE Posorja: <strong>4 - 6 días</strong></li>
+              <li>• Flete terrestre a Quito: <strong>1 día</strong></li>
+              <li style="border-top: 1px solid var(--color-border); margin-top: 8px; padding-top: 6px; color: #111111;">
+                <strong>Lead Time Total: 45 días</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div style="background: var(--color-bg-stone); padding: 20px; border-radius: 4px; border: 1px solid var(--color-border);">
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: #111111; margin-bottom: 10px;">
+              <i class="fas fa-truck-moving" style="color: var(--color-gold);"></i> Ruta Andina CAN (Colombia / Perú)
+            </h4>
+            <ul style="font-size: 0.82rem; line-height: 1.8; color: #4B5563; list-style: none;">
+              <li>• Preparación en planta (Bogotá/Medellín/Lima): <strong>3 días</strong></li>
+              <li>• Transporte terrestre internacional: <strong>4 - 5 días</strong></li>
+              <li>• Cruce fronterizo (Rumichaca / Huaquillas): <strong>1 - 2 días</strong></li>
+              <li>• Arribo a Bodega Quito: <strong>Inmediato</strong></li>
+              <li style="border-top: 1px solid var(--color-border); margin-top: 8px; padding-top: 6px; color: #111111;">
+                <strong>Lead Time Total: 8 días</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div style="background: var(--color-bg-stone); padding: 20px; border-radius: 4px; border: 1px solid var(--color-border);">
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: #111111; margin-bottom: 10px;">
+              <i class="fas fa-bell" style="color: var(--color-gold);"></i> Algoritmo de Reorden
+            </h4>
+            <p style="font-size: 0.82rem; color: #4B5563; line-height: 1.6;">
+              Fórmula de reposición continua:<br>
+              <code style="background: #FFFFFF; padding: 4px 8px; border-radius: 2px; border: 1px solid var(--color-border); display: inline-block; margin: 6px 0;">ROP = (D × L) + SS</code><br>
+              Evita quiebres de inventario garantizando el <strong>97.5% de nivel de servicio</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subpanel 3: Finanzas -->
+    <div id="subpanel-financial" class="twin-subpanel hidden-view">
+      <div class="twin-panel-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <h3 style="font-size: 1.3rem; color: #111111;">Proyección Financiera a 12 Meses</h3>
+            <p style="color: #6B7280; font-size: 0.85rem;">Modelo financiero sobre la inversión inicial de $100.000 USD.</p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn-spec scenario-btn" data-scenario="conservative">Conservador ($18k/mes)</button>
+            <button class="btn-spec scenario-btn active" data-scenario="target">Objetivo ($30k/mes)</button>
+            <button class="btn-spec scenario-btn" data-scenario="expansion">Expansión ($45k/mes)</button>
+          </div>
+        </div>
+
+        <div class="metrics-row">
+          <div class="metric-card">
+            <div class="metric-title">Ventas Anuales Proyectadas</div>
+            <div id="metric-annual-sales" class="metric-val">$0</div>
+            <div class="metric-sub">Facturación Bruta</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-title">Utilidad Neta Anual</div>
+            <div id="metric-annual-profit" class="metric-val">$0</div>
+            <div class="metric-sub">Después de OpEx</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-title">Retorno de Inversión (ROI)</div>
+            <div id="metric-annual-roi" class="metric-val">0%</div>
+            <div class="metric-sub">Sobre Capex de $100.000</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-title">Punto de Equilibrio</div>
+            <div class="metric-val">$21.875</div>
+            <div class="metric-sub">Ventas mínimas / mes</div>
+          </div>
+        </div>
+
+        <div style="position: relative; height: 350px; width: 100%;">
+          <canvas id="financial-chart-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. VISTA BLOG ==================== -->
+  <section id="view-blog" class="view-section hidden-view">
+    <div style="margin-bottom: 30px;">
+      <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Contenido Especializado</span>
+      <h2 style="font-size: 2.2rem; color: #111111; margin-top: 4px;">Blog Textil & Guías Técnicas GLOWTEX</h2>
+      <p style="color: #6B7280; font-size: 0.95rem; margin-top: 6px;">
+        Artículos especializados sobre selección de telas, normativas INEN 1875, acuerdos comerciales y tecnología de confección.
+      </p>
+    </div>
+
+    <div id="blog-posts-grid" class="blog-grid"></div>
+  </section>
+
+  <!-- ==================== 11. VISTA CONTACTO & SHOWROOM ==================== -->
+  <section id="view-contacto" class="view-section hidden-view">
+    <div style="margin-bottom: 30px;">
+      <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Atención al Cliente</span>
+      <h2 style="font-size: 2.2rem; color: #111111; margin-top: 4px;">Contacto y Showroom Comercial Quito</h2>
+      <p style="color: #6B7280; font-size: 0.95rem; margin-top: 6px;">
+        Visita nuestras instalaciones para pruebas de maquinaria y muestras de tela, o comunícate con nuestros asesores comerciales.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 35px;">
+      <div style="background: #FFFFFF; padding: 32px; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+        <h4 style="font-family: var(--font-serif); font-size: 1.3rem; color: #111111; margin-bottom: 16px;">Envíanos un Mensaje</h4>
+        <form onsubmit="event.preventDefault(); alert('Mensaje enviado con éxito. Te responderemos a la brevedad.'); this.reset();">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Nombre y Apellido:</label>
+            <input type="text" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Correo Electrónico:</label>
+            <input type="email" placeholder="correo@ejemplo.com" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label>Motivo de Consulta:</label>
+            <select>
+              <option>Cotización de Telas por Rollo (B2B)</option>
+              <option>Compra de Maquinaria Jack / JUKI</option>
+              <option>Muestrarios y Fichas Técnicas</option>
+              <option>Atención para Emprendedores</option>
+              <option>Otro Asunto Comercial</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom: 18px;">
+            <label>Mensaje:</label>
+            <textarea rows="3" style="width: 100%; padding: 10px; border: 1px solid var(--color-border); border-radius: 4px; font-family: inherit;" required placeholder="Escribe tu consulta..."></textarea>
+          </div>
+          <button type="submit" class="btn-luxury-primary" style="width: 100%; justify-content: center; background: #111111; color: #FFFFFF;">
+            Enviar Mensaje
+          </button>
+        </form>
+      </div>
+
+      <div style="background: var(--color-bg-stone); padding: 32px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.3rem; color: #111111; margin-bottom: 18px;">Canales Oficiales</h4>
+          <div style="font-size: 0.88rem; line-height: 2.1; color: #4B5563;">
+            <p><i class="fas fa-map-marker-alt" style="color: var(--color-gold); width: 22px;"></i> <strong>Ubicación:</strong> Av. 10 de Agosto y El Inca, Quito, Ecuador</p>
+            <p><i class="fas fa-phone" style="color: var(--color-gold); width: 22px;"></i> <strong>Teléfono:</strong> +593 2 290 4400</p>
+            <p><i class="fab fa-whatsapp" style="color: #25D366; width: 22px;"></i> <strong>WhatsApp:</strong> +593 99 445 0914</p>
+            <p><i class="fas fa-envelope" style="color: var(--color-gold); width: 22px;"></i> <strong>Correo:</strong> ventas@glowtex.ec / contacto@glowtex.ec</p>
+            <p><i class="fas fa-clock" style="color: var(--color-gold); width: 22px;"></i> <strong>Horario:</strong> Lunes a Viernes 08:30 - 18:00 | Sábados 09:00 - 14:00</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px; background: #FFFFFF; padding: 18px; border-radius: 4px; border: 1px solid var(--color-border);">
+          <h5 style="font-family: var(--font-serif); color: #111111; margin-bottom: 6px; font-size: 1.1rem;">Showroom Comercial (120 m²)</h5>
+          <p style="font-size: 0.82rem; color: #6B7280; line-height: 1.5;">
+            Banco de pruebas de costura Jack/JUKI, mesón de corte y catálogo de 150 colgadores de tela reales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MODALES ==================== -->
+
+  <!-- Modal Favoritos -->
+  <div id="wishlist-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3>Tu Lista de Favoritos</h3>
+        <button class="modal-close" onclick="closeWishlistModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div id="wishlist-items-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Modal Cuenta de Usuario -->
+  <div id="user-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>Acceso a Clientes GLOWTEX</h3>
+        <button class="modal-close" onclick="document.getElementById('user-modal').classList.remove('active')"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 16px;">
+          <label style="font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; color: #111111; text-transform: uppercase;">Correo Electrónico:</label>
+          <input type="email" id="login-email-input" placeholder="correo@ejemplo.com" style="width: 100%; padding: 10px; margin-top: 6px; border: 1px solid var(--color-border); border-radius: 4px;">
+        </div>
+        <div style="margin-bottom: 22px;">
+          <label style="font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; color: #111111; text-transform: uppercase;">Contraseña:</label>
+          <input type="password" placeholder="••••••••" style="width: 100%; padding: 10px; margin-top: 6px; border: 1px solid var(--color-border); border-radius: 4px;">
+        </div>
+        <button class="btn-luxury-primary" style="width: 100%; justify-content: center; margin-bottom: 12px; background: #111111; color: #FFFFFF;" onclick="processUserAuth('login')">
+          Iniciar Sesión
+        </button>
+        <button class="btn-spec" style="width: 100%; text-align: center;" onclick="processUserAuth('register')">
+          Registrar Empresa / Taller con RUC
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Ficha Técnica -->
+  <div id="product-detail-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Ficha Técnica & Regulación Aduanera</h3>
+        <button class="modal-close" onclick="closeProductModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div id="product-modal-content" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Modal Checkout -->
+  <div id="checkout-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3>Finalizar Compra - Facturación SRI</h3>
+        <button class="modal-close" onclick="closeCheckoutModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div id="checkout-order-summary"></div>
+
+        <h4 style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: #111111; margin-bottom: 12px; font-weight: 700;">Selecciona el Método de Pago:</h4>
+        <div class="payment-methods-grid">
+          <div class="payment-method-btn active" data-method="payphone" onclick="selectPaymentMethod('payphone')">
+            <i class="fas fa-mobile-alt" style="font-size: 1.4rem; color: #E11D48;"></i>
+            <span>PayPhone</span>
+          </div>
+          <div class="payment-method-btn" data-method="kushki" onclick="selectPaymentMethod('kushki')">
+            <i class="fas fa-credit-card" style="font-size: 1.4rem; color: #2563EB;"></i>
+            <span>Tarjeta / Kushki</span>
+          </div>
+          <div class="payment-method-btn" data-method="transfer" onclick="selectPaymentMethod('transfer')">
+            <i class="fas fa-university" style="font-size: 1.4rem; color: #D97706;"></i>
+            <span>Transferencia</span>
+          </div>
+        </div>
+
+        <div id="payment-details-container" style="margin-bottom: 20px;">
+          <div style="background: #EFF6FF; border: 1px solid #BFDBFE; padding: 14px; border-radius: 4px; font-size: 0.85rem; color: #1E3A8A;">
+            <h5 style="margin-bottom: 6px; font-family: var(--font-sans);"><i class="fas fa-mobile-alt"></i> Pasarela PayPhone Ecuador</h5>
+            <p>Ingresa tu número celular registrado en PayPhone para enviar el cobro directo a tu aplicación:</p>
+            <input type="text" placeholder="09XXXXXXXX" style="width: 100%; padding: 8px 12px; margin-top: 8px; border: 1px solid #93C5FD; border-radius: 4px;" value="0994450914" />
+          </div>
+        </div>
+
+        <button class="btn-checkout" onclick="processOrderCheckout()">
+          Confirmar Pedido y Emitir Proforma
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Visor RFQ -->
+  <div id="rfq-viewer-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Solicitud Formal de Cotización (RFQ Internacional)</h3>
+        <button class="modal-close" onclick="document.getElementById('rfq-viewer-modal').classList.remove('active')"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span style="font-size: 0.82rem; color: #6B7280;">Documento listo para enviar a fabricantes internacionales en Incoterm FOB</span>
+          <button class="btn-spec" onclick="copyRFQToClipboard()">
+            <i class="fas fa-copy"></i> Copiar Texto
+          </button>
+        </div>
+        <pre id="rfq-generated-text" class="rfq-pre"></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carrito Desplegable (Drawer) -->
+  <div id="cart-overlay" class="cart-overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3>Bolsa de Compras</h3>
+      <button id="close-cart-btn" class="btn-close-cart"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div id="cart-items-body" class="cart-items-body"></div>
+
+    <div class="cart-footer">
+      <table class="cart-summary-table">
+        <tr>
+          <td>Subtotal Mercadería:</td>
+          <td id="cart-subtotal-val">$0.00</td>
+        </tr>
+        <tr>
+          <td>IVA (15% Ecuador):</td>
+          <td id="cart-iva-val">$0.00</td>
+        </tr>
+        <tr>
+          <td>Despacho (Quito / Nacional):</td>
+          <td style="color: var(--color-success); font-weight: 700;">Gratis en Showroom / Cotizado</td>
+        </tr>
+        <tr class="cart-total-row">
+          <td><strong>Total a Pagar:</strong></td>
+          <td><strong id="cart-total-val">$0.00</strong></td>
+        </tr>
+      </table>
+
+      <button id="btn-open-checkout" class="btn-checkout">
+        Proceder al Pago / Proforma
+      </button>
+    </div>
+  </aside>
+
+  <!-- Botón Flotante de WhatsApp -->
+  <a href="https://wa.me/593994450914?text=Hola%20GLOWTEX,%20deseo%20informacion%20sobre%20sus%20textiles%20y%20maquinaria" target="_blank" class="floating-whatsapp-btn" title="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ==================== PIE DE PÁGINA 100% COMERCIAL ==================== -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>GLOWTEX S.A.S.</h4>
+        <p style="line-height: 1.7; margin-bottom: 14px;">
+          Empresa líder en importación, distribución y comercialización de textiles de alto rendimiento, hotelería premium, insumos de confección y maquinaria industrial Jack y JUKI en Ecuador.
+        </p>
+        <p style="font-size: 0.82rem; color: var(--color-gold);">
+          <i class="fas fa-map-marker-alt"></i> Showroom y Bodega: Av. 10 de Agosto y El Inca, Quito, Ecuador.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Colecciones</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="filterByDivisionAndOpenStore('sport'); return false;">GLOWTEX Sport</a></li>
+          <li><a href="#" onclick="filterByDivisionAndOpenStore('hospitality'); return false;">GLOWTEX Hospitality</a></li>
+          <li><a href="#" onclick="filterByDivisionAndOpenStore('premium'); return false;">GLOWTEX Premium</a></li>
+          <li><a href="#" onclick="filterByDivisionAndOpenStore('supplies'); return false;">GLOWTEX Supplies</a></li>
+          <li><a href="#" onclick="filterByDivisionAndOpenStore('machinery'); return false;">GLOWTEX Machinery</a></li>
+          <li><a href="#" onclick="filterByDivisionAndOpenStore('tools'); return false;">GLOWTEX Tools</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="switchView('inicio'); return false;">Inicio</a></li>
+          <li><a href="#" onclick="switchView('tienda'); return false;">Catálogo Completo</a></li>
+          <li><a href="#" onclick="switchView('promociones'); return false;">Ofertas y Promociones</a></li>
+          <li><a href="#" onclick="switchView('marcas'); return false;">Marcas y Proveedores</a></li>
+          <li><a href="#" onclick="switchView('nosotros'); return false;">Quiénes Somos</a></li>
+          <li><a href="#" onclick="switchView('branding'); return false;">Branding & Management</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios B2B</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="switchView('soluciones'); return false;">Ventas Corporativas B2B</a></li>
+          <li><a href="#" onclick="switchView('gemelo-digital'); return false;">Simulador Aduanero SENAE</a></li>
+          <li><a href="#" onclick="switchView('gemelo-digital'); return false;">Punto de Reorden (ROP)</a></li>
+          <li><a href="intranet/index.html"><i class="fas fa-lock" style="color: var(--color-gold); width: 18px;"></i> Acceso interno · Intranet</a></li>
+          <li><a href="#" onclick="switchView('blog'); return false;">Blog Textil y Guías</a></li>
+          <li><a href="#" onclick="switchView('contacto'); return false;">Showroom Quito</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Atención al Cliente</h4>
+        <p style="font-size: 0.85rem; line-height: 1.8;">
+          <strong>Teléfono:</strong> +593 2 290 4400<br>
+          <strong>WhatsApp:</strong> +593 99 445 0914<br>
+          <strong>Ventas:</strong> ventas@glowtex.ec<br>
+          <strong>Horario:</strong> Lun - Vie 08:30 a 18:00<br>
+          Sábados: 09:00 a 14:00
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 GLOWTEX S.A.S. - "Conectamos ideas con posibilidades". RUC en trámite. Registrado ante SENADI y SENAE. Facturación Electrónica SRI 15% IVA.</div>
+      <div>Envíos a todo el Ecuador por Servientrega y Urbano</div>
+    </div>
+  </footer>
+
+  <!-- Scripts de la Aplicación -->
+  <script src="js/catalog-data.js"></script>
+  <script src="js/suppliers-rfq.js"></script>
+  <script src="js/digital-twin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

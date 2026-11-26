@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLOWTEX S.A.S. | Portal Interno · ERP + CRM</title>
+  <meta name="description" content="Canal digital interno de GLOWTEX S.A.S.: sistemas ERP y CRM para gestión operativa y comercial. Uso exclusivo del personal autorizado.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="css/erp.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+
+  <!-- ==================== ACCESO RESTRINGIDO ==================== -->
+  <div id="portal-login" class="portal-login">
+    <div class="login-card">
+      <div class="login-brand">
+        <div class="login-logo"><i class="fas fa-lock"></i></div>
+        <div>
+          <h1>GLOWTEX <span style="color:var(--gold);">INTRANET</span></h1>
+          <span>Canal digital interno · Uso autorizado</span>
+        </div>
+      </div>
+      <h2>Portal de Gestión</h2>
+      <p class="login-sub">Acceso a los sistemas internos <strong>ERP</strong> (operaciones) y <strong>CRM</strong> (relaciones con clientes). Este canal es independiente de la tienda virtual pública.</p>
+
+      <form id="portal-login-form">
+        <div class="login-field">
+          <label>Usuario</label>
+          <input type="text" id="portal-user" placeholder="Usuario interno" autocomplete="username">
+        </div>
+        <div class="login-field">
+          <label>Contraseña</label>
+          <input type="password" id="portal-pass" placeholder="Contraseña" autocomplete="current-password">
+        </div>
+        <div id="portal-login-error" class="login-error"></div>
+        <button type="submit" class="login-btn"><i class="fas fa-sign-in-alt"></i> Ingresar al Portal</button>
+      </form>
+
+      <div class="login-hint">
+        <strong>Credenciales de demostración</strong><br>
+        Usuario: <span class="erp-code">glowtex</span> · Clave: <span class="erp-code">Glowtex2026!</span><br>
+        Alternativo: <span class="erp-code">admin</span> / <span class="erp-code">admin123</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== APLICACIÓN INTERNA ==================== -->
+  <div id="portal-app" class="portal-app hidden">
+
+    <aside class="portal-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-name">GLOW<span>TEX</span></div>
+        <div class="brand-sub">Intranet · Sistemas internos</div>
+      </div>
+      <div class="sidebar-user">
+        <strong>Sesión activa</strong>
+        <span>Usuario: <span id="portal-user-chip">—</span></span>
+      </div>
+
+      <div class="nav-group-label">Sistemas integrados</div>
+      <button class="system-btn active" data-system="erp"><i class="fas fa-cogs"></i> ERP · Operaciones</button>
+      <button class="system-btn" data-system="crm"><i class="fas fa-handshake"></i> CRM · Clientes</button>
+
+      <div class="sidebar-footer">
+        <i class="fas fa-shield-alt"></i> Canal separado de la plataforma comercial.<br>
+        Los datos se guardan en este navegador.<br><br>
+        <a href="../index.html"><i class="fas fa-arrow-left"></i> Volver a la tienda</a>
+        <button id="portal-logout" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div>
+          <h2 id="portal-system-title">ERP · Gestión Integral de Operaciones</h2>
+          <div class="topbar-sub" id="portal-system-subtitle">Inventario, importaciones, ventas, contabilidad y nómina · GLOWTEX S.A.S.</div>
+        </div>
+        <div class="portal-env-badge"><i class="fas fa-circle" style="color:#10B981;margin-right:6px;"></i> Entorno interno · Simulación</div>
+      </div>
+
+      <!-- ==================== SISTEMA ERP ==================== -->
+  <section id="system-erp" class="system-view">
+    <div class="erp-shell">
+
+      <div class="erp-header">
+        <div>
+          <span style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--color-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
+            Sistema Integrado de Gestión · GLOWTEX S.A.S.
+          </span>
+          <h2>ERP · Enterprise Resource Planning</h2>
+          <p style="max-width: 760px;">
+            Simulador operativo en tiempo real de la empresa: inventario en Bodega Quito, importaciones con liquidación SENAE/ECUAPASS,
+            ventas con facturación electrónica SRI, contabilidad por partida doble, cuentas por cobrar/pagar, IVA y nómina IESS.
+            Cada operación modifica el estado del negocio y se guarda automáticamente en tu navegador.
+          </p>
+        </div>
+        <div class="erp-env-tag" id="erp-header-status">
+          <i class="fas fa-circle" style="color:#10B981; margin-right:6px;"></i> ERP Operativo
+        </div>
+      </div>
+
+      <div class="erp-subnav">
+        <button class="erp-tab-btn active" data-erp-module="dashboard"><i class="fas fa-tachometer-alt"></i> 1. Panel de Control</button>
+        <button class="erp-tab-btn" data-erp-module="inventario"><i class="fas fa-boxes"></i> 2. Inventario / Bodega</button>
+        <button class="erp-tab-btn" data-erp-module="compras"><i class="fas fa-ship"></i> 3. Compras e Importaciones</button>
+        <button class="erp-tab-btn" data-erp-module="ventas"><i class="fas fa-receipt"></i> 4. Ventas y Facturación</button>
+        <button class="erp-tab-btn" data-erp-module="finanzas"><i class="fas fa-balance-scale"></i> 5. Finanzas y Contabilidad</button>
+        <button class="erp-tab-btn" data-erp-module="rrhh"><i class="fas fa-users"></i> 6. Recursos Humanos</button>
+        <button class="erp-tab-btn" data-erp-module="config"><i class="fas fa-cog"></i> 7. Configuración</button>
+      </div>
+
+      <!-- MÓDULO 1: PANEL DE CONTROL -->
+      <div id="erp-module-dashboard" class="erp-module">
+        <div id="erp-dashboard-kpis" class="erp-kpi-grid"></div>
+
+        <div class="erp-two-col">
+          <div class="erp-panel">
+            <div class="erp-section-label">Flujo comercial de la operación</div>
+            <h3 class="erp-panel-title">Facturación vs. Importaciones</h3>
+            <p class="erp-panel-subtitle">Evolución mensual generada a partir de las transacciones registradas en el ERP.</p>
+            <div class="erp-chart-box"><canvas id="erp-dashboard-chart"></canvas></div>
+          </div>
+          <div class="erp-panel" id="erp-dashboard-summary"></div>
+        </div>
+
+        <div class="erp-two-col">
+          <div class="erp-panel">
+            <div class="erp-section-label">Inteligencia de inventario</div>
+            <h3 class="erp-panel-title">Alertas de Punto de Reorden (ROP)</h3>
+            <p class="erp-panel-subtitle">ROP = (Demanda diaria × Lead Time) + Stock de seguridad. Genera RFQ con un clic.</p>
+            <div id="erp-dashboard-alerts"></div>
+          </div>
+          <div class="erp-panel">
+            <div class="erp-section-label">Trazabilidad</div>
+            <h3 class="erp-panel-title">Actividad reciente del sistema</h3>
+            <p class="erp-panel-subtitle">Registro de auditoría de todas las operaciones ERP.</p>
+            <div id="erp-dashboard-activity"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÓDULO 2: INVENTARIO -->
+      <div id="erp-module-inventario" class="erp-module hidden-view">
+        <div class="erp-panel">
+          <div class="erp-section-label">Almacén · Bodega Quito</div>
+          <h3 class="erp-panel-title">Control de Inventario Valorizado</h3>
+          <p class="erp-panel-subtitle">150 SKUs en 6 divisiones · Costo unitario nacionalizado · Rotación FIFO · Alertas de quiebre.</p>
+          <div class="erp-form-grid">
+            <div class="erp-field">
+              <label>Buscar referencia</label>
+              <input type="text" id="erp-inv-search" placeholder="SKU, nombre de tela, fibra...">
+            </div>
+            <div class="erp-field">
+              <label>División comercial</label>
+              <select id="erp-inv-division"></select>
+            </div>
+          </div>
+          <div class="erp-table-wrap">
+            <table class="erp-table">
+              <thead>
+                <tr>
+                  <th>Referencia</th><th>División</th><th class="num">Stock</th><th class="num">ROP</th>
+                  <th class="num">Cobertura</th><th class="num">Costo ud.</th><th class="num">Valorizado</th>
+                  <th>Estado</th><th>Acción</th>
+                </tr>
+              </thead>
+              <tbody id="erp-inventory-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="erp-panel" id="erp-inv-summary"></div>
+      </div>
+
+      <!-- MÓDULO 3: COMPRAS E IMPORTACIONES -->
+      <div id="erp-module-compras" class="erp-module hidden-view">
+        <div class="erp-panel">
+          <div class="erp-section-label">Abastecimiento internacional</div>
+          <h3 class="erp-panel-title">Nueva Orden de Compra / RFQ</h3>
+          <p class="erp-panel-subtitle">Simulación de nacionalización: CIF → Arancel → FODINFA 0.5% → IVA 15% → Costo puesto en Quito.</p>
+          <form id="erp-po-form">
+            <div class="erp-form-grid">
+              <div class="erp-field">
+                <label>Proveedor homologado</label>
+                <select id="erp-po-supplier"></select>
+              </div>
+              <div class="erp-field">
+                <label>Producto / SKU</label>
+                <select id="erp-po-product"></select>
+              </div>
+              <div class="erp-field">
+                <label>Cantidad (uds / metros)</label>
+                <input type="number" id="erp-po-qty" value="100" min="1" step="1">
+              </div>
+              <div class="erp-field">
+                <label>Precio unitario FOB (USD)</label>
+                <input type="number" id="erp-po-price" value="3.80" min="0.01" step="0.01">
+              </div>
+              <div class="erp-field">
+                <label>Incoterm</label>
+                <select id="erp-po-incoterm">
+                  <option value="FOB">FOB - Franco a Bordo</option>
+                  <option value="CIF">CIF - Costo, Seguro y Flete</option>
+                  <option value="EXW">EXW - En Fábrica</option>
+                </select>
+              </div>
+              <div class="erp-field" style="display:flex;align-items:flex-end;">
+                <button type="submit" class="erp-btn erp-btn-primary" style="width:100%;justify-content:center;">
+                  <i class="fas fa-file-contract"></i> Crear Orden de Compra
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="erp-section-label" style="margin-top:16px;">Simulador de liquidación aduanera (preview)</div>
+          <div id="erp-po-preview"></div>
+        </div>
+
+        <div class="erp-panel">
+          <div class="erp-section-label">Ciclo logístico SENAE</div>
+          <h3 class="erp-panel-title">Órdenes de Compra Internacionales</h3>
+          <p class="erp-panel-subtitle">Flujo: Borrador → Aprobada → En tránsito → Desaduanada → Recibida → Pagada. Al recibir, el stock y el costo se actualizan automáticamente.</p>
+          <div class="erp-table-wrap">
+            <table class="erp-table">
+              <thead>
+                <tr>
+                  <th>Orden</th><th>Proveedor / Origen</th><th>Producto</th><th class="num">CIF</th>
+                  <th class="num">Puesto Quito</th><th class="num">CxP</th><th>Estado</th><th>Gestión</th>
+                </tr>
+              </thead>
+              <tbody id="erp-po-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="erp-panel" id="erp-po-summary"></div>
+      </div>
+
+      <!-- MÓDULO 4: VENTAS -->
+      <div id="erp-module-ventas" class="erp-module hidden-view">
+        <div class="erp-panel">
+          <div class="erp-section-label">Canal B2B / B2C</div>
+          <h3 class="erp-panel-title">Registrar Venta y Emitir Factura SRI</h3>
+          <p class="erp-panel-subtitle">Al confirmar: descuenta stock, genera factura 001-001-XXXXXXXX, contabiliza IVA 15%, costo de ventas y cuenta por cobrar.</p>
+          <form id="erp-so-form">
+            <div class="erp-form-grid">
+              <div class="erp-field"><label>Cliente / Razón social</label><input type="text" id="erp-so-customer" placeholder="Ej. Confecciones Andinas S.A.S."></div>
+              <div class="erp-field"><label>RUC / Cédula</label><input type="text" id="erp-so-ruc" placeholder="099...");
+              </div>
+              <div class="erp-field">
+                <label>Canal</label>
+                <select id="erp-so-channel"><option value="B2B">B2B · Mayorista</option><option value="B2C">B2C · Detalle</option></select>
+              </div>
+              <div class="erp-field"><label>Producto</label><select id="erp-so-product"></select></div>
+              <div class="erp-field"><label>Cantidad</label><input type="number" id="erp-so-qty" value="10" min="1" step="1"></div>
+              <div class="erp-field"><label>Precio unitario (USD)</label><input type="number" id="erp-so-price" value="7.90" min="0.01" step="0.01"></div>
+              <div class="erp-field" style="display:flex;align-items:flex-end;">
+                <button type="submit" class="erp-btn erp-btn-primary" style="width:100%;justify-content:center;">
+                  <i class="fas fa-file-invoice"></i> Emitir Factura
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="erp-section-label" style="margin-top:16px;">Simulación de factura</div>
+          <div id="erp-so-preview"></div>
+        </div>
+
+        <div class="erp-panel">
+          <div class="erp-section-label">Cartera comercial</div>
+          <h3 class="erp-panel-title">Pedidos, Facturas y Cobranzas</h3>
+          <p class="erp-panel-subtitle">Gestiona el ciclo Facturado → Despachado → Pagado y su impacto en tesorería.</p>
+          <div class="erp-table-wrap">
+            <table class="erp-table">
+              <thead>
+                <tr>
+                  <th>Pedido</th><th>Cliente</th><th>Producto</th><th class="num">Subtotal</th>
+                  <th class="num">IVA</th><th class="num">Total</th><th>Factura SRI</th><th>Estado</th><th>Gestión</th>
+                </tr>
+              </thead>
+              <tbody id="erp-so-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="erp-panel" id="erp-so-summary"></div>
+      </div>
+
+      <!-- MÓDULO 5: FINANZAS -->
+      <div id="erp-module-finanzas" class="erp-module hidden-view">
+        <div id="erp-fin-kpis" class="erp-kpi-grid"></div>
+        <div class="erp-two-col">
+          <div class="erp-panel">
+            <div class="erp-section-label">Libro Diario General</div>
+            <h3 class="erp-panel-title">Asientos contables automáticos</h3>
+            <p class="erp-panel-subtitle">Cada movimiento del ERP genera su partida doble en tiempo real.</p>
+            <div class="erp-table-wrap" style="max-height: 460px; overflow-y: auto;">
+              <table class="erp-table">
+                <thead>
+                  <tr><th>Asiento</th><th>Fecha</th><th>Concepto</th><th>Debe</th><th>Haber</th><th class="num">Valor</th></tr>
+                </thead>
+                <tbody id="erp-fin-journal-body"></tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <div class="erp-panel" id="erp-fin-tax"></div>
+            <div class="erp-panel" id="erp-fin-balances"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÓDULO 6: RECURSOS HUMANOS -->
+      <div id="erp-module-rrhh" class="erp-module hidden-view">
+        <div class="erp-panel">
+          <div class="erp-section-label">Nómina y talento humano</div>
+          <h3 class="erp-panel-title">Estructura organizacional GLOWTEX S.A.S.</h3>
+          <p class="erp-panel-subtitle">Cálculo de IESS personal (9.45%), patronal (12.15%) y provisiones legales (25%).</p>
+          <div class="erp-table-wrap">
+            <table class="erp-table">
+              <thead>
+                <tr><th>Colaborador</th><th>Cargo</th><th>Área</th><th class="num">Sueldo</th><th class="num">IESS pers.</th><th class="num">IESS pat.</th><th class="num">Costo empresa</th></tr>
+              </thead>
+              <tbody id="erp-hr-body"></tbody>
+            </table>
+          </div>
+          <div class="erp-actions-bar" style="margin-top:16px;">
+            <button class="erp-btn erp-btn-primary" id="erp-run-payroll"><i class="fas fa-cash-register"></i> Procesar Nómina del Mes</button>
+          </div>
+        </div>
+        <div class="erp-panel" id="erp-hr-summary"></div>
+      </div>
+
+      <!-- MÓDULO 7: CONFIGURACIÓN -->
+      <div id="erp-module-config" class="erp-module hidden-view">
+        <div class="erp-panel">
+          <div class="erp-section-label">Parámetros de la compañía</div>
+          <h3 class="erp-panel-title">Configuración del Simulador ERP</h3>
+          <p class="erp-panel-subtitle">Datos institucionales, cumplimiento normativo y control del escenario de simulación.</p>
+          <div id="erp-config-body"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+        <!-- ==================== SISTEMA CRM ==================== -->
+  <section id="system-crm" class="system-view hidden">
+    <div class="crm-subnav">
+      <button class="crm-tab-btn active" data-crm-module="dashboard"><i class="fas fa-tachometer-alt"></i> 1. Panel</button>
+      <button class="crm-tab-btn" data-crm-module="clientes"><i class="fas fa-address-book"></i> 2. Clientes</button>
+      <button class="crm-tab-btn" data-crm-module="leads"><i class="fas fa-user-plus"></i> 3. Leads</button>
+      <button class="crm-tab-btn" data-crm-module="oportunidades"><i class="fas fa-handshake"></i> 4. Oportunidades</button>
+      <button class="crm-tab-btn" data-crm-module="actividades"><i class="fas fa-tasks"></i> 5. Actividades</button>
+      <button class="crm-tab-btn" data-crm-module="postventa"><i class="fas fa-headset"></i> 6. Postventa</button>
+      <button class="crm-tab-btn" data-crm-module="campanas"><i class="fas fa-bullhorn"></i> 7. Campañas</button>
+      <button class="crm-tab-btn" data-crm-module="integracion"><i class="fas fa-plug"></i> 8. Integración ERP</button>
+    </div>
+
+    <!-- CRM 1: PANEL -->
+    <div id="crm-module-dashboard" class="crm-module">
+      <div id="crm-dashboard-kpis" class="erp-kpi-grid"></div>
+      <div class="erp-two-col">
+        <div class="erp-panel">
+          <div class="erp-section-label">Embudo comercial</div>
+          <h3 class="erp-panel-title">Leads y oportunidades por etapa</h3>
+          <p class="erp-panel-subtitle">Distribución de la cartera comercial de GLOWTEX S.A.S.</p>
+          <div class="erp-chart-box"><canvas id="crm-dashboard-chart"></canvas></div>
+        </div>
+        <div class="erp-panel" id="crm-dashboard-summary"></div>
+      </div>
+      <div class="erp-panel">
+        <div class="erp-section-label">Trazabilidad comercial</div>
+        <h3 class="erp-panel-title">Actividad reciente del CRM</h3>
+        <p class="erp-panel-subtitle">Registro de clientes, leads, oportunidades y conversiones.</p>
+        <div id="crm-dashboard-activity"></div>
+      </div>
+    </div>
+
+    <!-- CRM 2: CLIENTES -->
+    <div id="crm-module-clientes" class="crm-module hidden">
+      <div class="erp-panel">
+        <div class="erp-section-label">Cartera comercial</div>
+        <h3 class="erp-panel-title">Nuevo Cliente</h3>
+        <p class="erp-panel-subtitle">Registro B2B / B2C con RUC, sector y datos de contacto.</p>
+        <form id="crm-client-form">
+          <div class="erp-form-grid">
+            <div class="erp-field"><label>Razón social / Nombre</label><input type="text" id="crm-client-name" placeholder="Ej. Confecciones Andinas S.A.S."></div>
+            <div class="erp-field"><label>RUC / Cédula</label><input type="text" id="crm-client-ruc" placeholder="099..."></div>
+            <div class="erp-field"><label>Canal</label><select id="crm-client-channel"><option value="B2B">B2B · Mayorista</option><option value="B2C">B2C · Detalle</option></select></div>
+            <div class="erp-field"><label>Sector</label><input type="text" id="crm-client-sector" placeholder="Confección y Textil"></div>
+            <div class="erp-field"><label>Ciudad</label><input type="text" id="crm-client-city" value="Quito"></div>
+            <div class="erp-field"><label>Teléfono</label><input type="text" id="crm-client-phone" placeholder="099..."></div>
+            <div class="erp-field"><label>Correo electrónico</label><input type="email" id="crm-client-email" placeholder="contacto@empresa.com"></div>
+            <div class="erp-field" style="display:flex;align-items:flex-end;"><button type="submit" class="erp-btn erp-btn-primary" style="width:100%;justify-content:center;"><i class="fas fa-user-plus"></i> Guardar Cliente</button></div>
+          </div>
+        </form>
+      </div>
+      <div class="erp-panel">
+        <div class="erp-section-label">Base de datos</div>
+        <h3 class="erp-panel-title">Clientes Registrados</h3>
+        <div class="erp-form-grid">
+          <div class="erp-field"><label>Buscar cliente o RUC</label><input type="text" id="crm-client-search" placeholder="Nombre, RUC..."></div>
+        </div>
+        <div class="erp-table-wrap">
+          <table class="erp-table">
+            <thead><tr><th>Código</th><th>Cliente</th><th>RUC / Cédula</th><th>Canal</th><th>Sector / Ciudad</th><th class="num">Facturación</th><th>Estado</th></tr></thead>
+            <tbody id="crm-client-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="erp-panel" id="crm-client-summary"></div>
+    </div>
+
+    <!-- CRM 3: LEADS -->
+    <div id="crm-module-leads" class="crm-module hidden">
+      <div class="erp-panel">
+        <div class="erp-section-label">Prospección</div>
+        <h3 class="erp-panel-title">Registrar Lead</h3>
+        <p class="erp-panel-subtitle">Origen: showroom, sitio web, WhatsApp, redes sociales o ferias.</p>
+        <form id="crm-lead-form">
+          <div class="erp-form-grid">
+            <div class="erp-field"><label>Nombre del contacto</label><input type="text" id="crm-lead-name" placeholder="Ej. Ing. Roberto Cedeño"></div>
+            <div class="erp-field"><label>Empresa</label><input type="text" id="crm-lead-company" placeholder="Ej. Fábrica Uniformes Atuntaqui"></div>
+            <div class="erp-field"><label>Origen</label><select id="crm-lead-source"><option>Showroom Quito</option><option>Sitio Web</option><option>WhatsApp</option><option>Instagram</option><option>Feria Comercial</option></select></div>
+            <div class="erp-field"><label>Valor estimado (USD)</label><input type="number" id="crm-lead-value" value="1000" min="0" step="10"></div>
+            <div class="erp-field"><label>Responsable</label><select id="crm-lead-owner"><option>Jefe Comercial</option><option>Asesora Showroom</option></select></div>
+            <div class="erp-field" style="display:flex;align-items:flex-end;"><button type="submit" class="erp-btn erp-btn-primary" style="width:100%;justify-content:center;"><i class="fas fa-plus"></i> Agregar Lead</button></div>
+          </div>
+        </form>
+      </div>
+      <div class="erp-panel">
+        <div class="erp-section-label">Embudo de prospección</div>
+        <h3 class="erp-panel-title">Leads · Nuevo → Contactado → Calificado → Propuesta → Cerrado</h3>
+        <div class="erp-table-wrap">
+          <table class="erp-table">
+            <thead><tr><th>ID</th><th>Contacto / Empresa</th><th>Origen</th><th class="num">Valor</th><th>Etapa</th><th>Responsable</th><th>Gestión</th></tr></thead>
+            <tbody id="crm-lead-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="erp-panel" id="crm-lead-summary"></div>
+    </div>
+
+    <!-- CRM 4: OPORTUNIDADES -->
+    <div id="crm-module-oportunidades" class="crm-module hidden">
+      <div class="erp-panel">
+        <div class="erp-section-label">Pipeline de ventas</div>
+        <h3 class="erp-panel-title">Nueva Oportunidad</h3>
+        <p class="erp-panel-subtitle">Al marcar una oportunidad como <strong>Ganada</strong> se emite automáticamente una factura SRI en el ERP.</p>
+        <form id="crm-opp-form">
+          <div class="erp-form-grid">
+            <div class="erp-field"><label>Cliente</label><select id="crm-opp-client"></select></div>
+            <div class="erp-field"><label>Título de la oportunidad</label><input type="text" id="crm-opp-title" placeholder="Ej. Renovación textil hoteles"></div>
+            <div class="erp-field"><label>Valor estimado (USD)</label><input type="number" id="crm-opp-value" value="2000" min="0" step="50"></div>
+            <div class="erp-field"><label>Probabilidad (%)</label><input type="number" id="crm-opp-prob" value="50" min="1" max="100"></div>
+            <div class="erp-field"><label>Fecha cierre estimada</label><input type="date" id="crm-opp-close"></div>
+            <div class="erp-field"><label>SKU a facturar</label><select id="crm-opp-sku"></select></div>
+            <div class="erp-field"><label>Cantidad</label><input type="number" id="crm-opp-qty" value="50" min="1"></div>
+            <div class="erp-field"><label>Precio unitario (USD)</label><input type="number" id="crm-opp-price" value="7.90" min="0.01" step="0.01"></div>
+            <div class="erp-field" style="display:flex;align-items:flex-end;"><button type="submit" class="erp-btn erp-btn-primary" style="width:100%;justify-content:center;"><i class="fas fa-handshake"></i> Crear Oportunidad</button></div>
+          </div>
+        </form>
+      </div>
+      <div class="erp-panel">
+        <div class="erp-section-label">Cartera de oportunidades</div>
+        <h3 class="erp-panel-title">Pipeline Activo</h3>
+        <div class="erp-table-wrap">
+          <table class="erp-table">
+            <thead><tr><th>ID</th><th>Cliente / Proyecto</th><th class="num">Valor</th><th class="num">Prob.</th><th class="num">Ponderado</th><th>Cierre</th><th>Etapa</th><th>Gestión</th></tr></thead>
+            <tbody id="crm-opp-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="erp-panel" id="crm-opp-summary"></div>
+    </div>
+
+    <!-- CRM 5: ACTIVIDADES -->
+    <div id="crm-module-actividades" class="crm-module hidden">
+      <div class="erp-panel">
+        <div class="erp-section-label">Seguimiento comercial</div>
+        <h3 class="erp-panel-title">Programar Actividad</h3>
+        <form id="crm-act-form">
+          <div class="erp-form-grid">
+            <div class="erp-field"><label>Cliente</label><select id="crm-act-client"></select></div>
+            <div class="erp-field"><label>Tipo</label><select id="crm-act-type"><option>Seguimiento</option><option>Llamada</option><option>Reunión</option><option>Visita a showroom</option><option>Envío de muestrario</option></select></div>
+            <div class="erp-field"><label>Fecha</label><input type="date" id="crm-act-date"></div>
+            <div class="erp-field"><label>Nota / Objetivo</label><input type="text" id="crm-act-note" placeholder="Ej. Confirmar volumen de lycra"></div>
+            <div class="erp-field" style="display:flex;align-items:flex-end;"><button type="submit" class="erp-btn erp-btn-primary" style="width:100%;justify-content:center;"><i class="fas fa-calendar-plus"></i> Programar</button></div>
+          </div>
+        </form>
+      </div>
+      <div class="erp-panel">
+        <div class="erp-section-label">Agenda comercial</div>
+        <h3 class="erp-panel-title">Actividades Registradas</h3>
+        <div class="erp-table-wrap">
+          <table class="erp-table">
+            <thead><tr><th>ID</th><th>Cliente</th><th>Tipo</th><th>Fecha</th><th>Nota</th><th>Responsable</th><th>Estado</th><th></th></tr></thead>
+            <tbody id="crm-act-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRM 6: POSTVENTA -->
+    <div id="crm-module-postventa" class="crm-module hidden">
+      <div class="erp-panel">
+        <div class="erp-section-label">Servicio al cliente</div>
+        <h3 class="erp-panel-title">Registrar Caso de Postventa</h3>
+        <p class="erp-panel-subtitle">Garantías de maquinaria Jack/JUKI, reclamos logísticos y consultas técnicas.</p>
+        <form id="crm-case-form">
+          <div class="erp-form-grid">
+            <div class="erp-field"><label>Cliente</label><select id="crm-case-client"></select></div>
+            <div class="erp-field"><label>Tipo de caso</label><select id="crm-case-type"><option>Consulta técnica</option><option>Garantía maquinaria</option><option>Logística</option><option>Facturación</option><option>Devolución</option></select></div>
+            <div class="erp-field"><label>Prioridad</label><select id="crm-case-priority"><option>Baja</option><option>Media</option><option>Alta</option></select></div>
+            <div class="erp-field"><label>Descripción</label><input type="text" id="crm-case-desc" placeholder="Detalle del caso"></div>
+            <div class="erp-field" style="display:flex;align-items:flex-end;"><button type="submit" class="erp-btn erp-btn-primary" style="width:100%;justify-content:center;"><i class="fas fa-headset"></i> Abrir Caso</button></div>
+          </div>
+        </form>
+      </div>
+      <div class="erp-panel">
+        <div class="erp-section-label">Centro de casos</div>
+        <h3 class="erp-panel-title">Gestión de Postventa</h3>
+        <div class="erp-table-wrap">
+          <table class="erp-table">
+            <thead><tr><th>ID</th><th>Cliente</th><th>Tipo</th><th>Prioridad</th><th>Descripción</th><th>Fecha</th><th>Estado</th><th>Gestión</th></tr></thead>
+            <tbody id="crm-case-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="erp-panel" id="crm-case-summary"></div>
+    </div>
+
+    <!-- CRM 7: CAMPAÑAS -->
+    <div id="crm-module-campanas" class="crm-module hidden">
+      <div class="erp-panel">
+        <div class="erp-section-label">Marketing comercial</div>
+        <h3 class="erp-panel-title">Registrar Campaña</h3>
+        <form id="crm-camp-form">
+          <div class="erp-form-grid">
+            <div class="erp-field"><label>Nombre de la campaña</label><input type="text" id="crm-camp-name" placeholder="Ej. Combo Taller Emprendedor"></div>
+            <div class="erp-field"><label>Canal</label><select id="crm-camp-channel"><option>WhatsApp + Showroom</option><option>Email B2B</option><option>Redes Sociales</option><option>Sitio Web</option></select></div>
+            <div class="erp-field"><label>Leads generados</label><input type="number" id="crm-camp-leads" value="10" min="0"></div>
+            <div class="erp-field"><label>Inversión (USD)</label><input type="number" id="crm-camp-cost" value="100" min="0" step="1"></div>
+            <div class="erp-field"><label>Ingresos atribuidos (USD)</label><input type="number" id="crm-camp-revenue" value="0" min="0" step="1"></div>
+            <div class="erp-field" style="display:flex;align-items:flex-end;"><button type="submit" class="erp-btn erp-btn-primary" style="width:100%;justify-content:center;"><i class="fas fa-bullhorn"></i> Crear Campaña</button></div>
+          </div>
+        </form>
+      </div>
+      <div class="erp-panel">
+        <div class="erp-section-label">Retorno de inversión</div>
+        <h3 class="erp-panel-title">Campañas Activas e Históricas</h3>
+        <div class="erp-table-wrap">
+          <table class="erp-table">
+            <thead><tr><th>ID</th><th>Campaña</th><th>Canal</th><th class="num">Leads</th><th class="num">Inversión</th><th class="num">Ingresos</th><th class="num">ROI</th><th>Estado</th></tr></thead>
+            <tbody id="crm-camp-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="erp-panel" id="crm-camp-summary"></div>
+    </div>
+
+    <!-- CRM 8: INTEGRACIÓN -->
+    <div id="crm-module-integracion" class="crm-module hidden">
+      <div class="erp-panel" id="crm-integration-body"></div>
+    </div>
+  </section>
+
+
+    </main>
+  </div>
+
+  <!-- ==================== DATOS Y MOTORES ==================== -->
+  <script src="js/catalog-data.js"></script>
+  <script src="js/suppliers-rfq.js"></script>
+  <script src="js/digital-twin.js"></script>
+  <script src="js/erp.js"></script>
+  <script src="js/crm.js"></script>
+  <script src="js/portal.js"></script>
+</body>
+</html>
